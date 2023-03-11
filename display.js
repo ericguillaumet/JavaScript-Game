@@ -1,3 +1,5 @@
+const SCALE = 20;
+
 function createElement(type, className) { //Auxiliar method to create elements
     let element = document.createElement(type);
     if (className !== undefined) element.className = className
@@ -9,4 +11,8 @@ function DOMDisplay (parent, level) {
     this.level = level;
 
     //this.wrap.appendChild();
+    this.drawBackground = function () {
+        let table = createElement('table', 'background');
+        table.style.width = this.level.width[0] * SCALE + 'px'; //levels style // px === pixel
+    }
 }
